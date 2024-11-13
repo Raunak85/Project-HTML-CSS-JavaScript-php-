@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/post_job.css">
+    <title>Post a Job</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="recruiter_dashboard.html">Dashboard</a></li>
+            <li><a href="post_job.html">Post a Job</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="../php/logout.php">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Post a Job</h1>
+        <form action="../php/post_job.php" method="POST">
+            <label for="title">Job Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="company_name">Company Name:</label>
+            <input type="text" id="company_name" name="company_name" required>
+
+            <label for="description">Job Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="vacancy_date">Vacancy Date:</label>
+            <input type="date" id="vacancy_date" name="vacancy_date" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <button type="submit">Post Job</button>
+        </form>
+    </div>
+</body>
+</html>

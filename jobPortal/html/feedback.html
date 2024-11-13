@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="../css/feedback.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../php/user_dashboard.php">Dashboard</a></li>
+            <li><a href="../php/logout.php">Logout</a></li>
+        </ul>
+    </nav>
+    
+    <div class="feedback-container">
+        <h2>Submit Feedback</h2>
+        
+        <!-- Message display area (e.g., feedback success or error message) -->
+        <?php if (isset($_GET['message'])): ?>
+            <div class="message">
+                <?php echo htmlspecialchars($_GET['message']); ?>
+            </div>
+        <?php endif; ?>
+        
+        <!-- Feedback form -->
+        <form action="../php/feedback.php" method="POST">
+            <!-- Feedback message input -->
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <!-- Optional Job ID input -->
+            <label for="job_id">Job ID (Optional):</label>
+            <input type="number" id="job_id" name="job_id" placeholder="Enter job ID (if any)">
+            
+            <!-- Submit button -->
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</body>
+</html>
